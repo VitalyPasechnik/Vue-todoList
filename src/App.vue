@@ -1,47 +1,90 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <section className="todoapp">
+    <header className="header">
+      <h1>todos</h1>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
+      <form>
+        <input
+          type="text"
+          className="new-todo"
+          placeholder="What needs to be done?"
+        />
+      </form>
+    </header>
 
-  <main>
-    <TheWelcome />
-  </main>
+    <section className="main">
+      <input type="checkbox" id="toggle-all" className="toggle-all" />
+      <label htmlFor="toggle-all">Mark all as complete</label>
+
+      <ul className="todo-list">
+        <li>
+          <div className="view">
+            <input type="checkbox" className="toggle" id="toggle-view" />
+            <label htmlFor="toggle-view">asdfghj</label>
+            <button type="button" className="destroy" />
+          </div>
+          <input type="text" className="edit" />
+        </li>
+
+        <li className="completed">
+          <div className="view">
+            <input type="checkbox" className="toggle" id="toggle-completed" />
+            <label htmlFor="toggle-completed">qwertyuio</label>
+            <button type="button" className="destroy" />
+          </div>
+          <input type="text" className="edit" />
+        </li>
+
+        <li className="editing">
+          <div className="view">
+            <input type="checkbox" className="toggle" id="toggle-editing" />
+            <label htmlFor="toggle-editing">zxcvbnm</label>
+            <button type="button" className="destroy" />
+          </div>
+          <input type="text" className="edit" />
+        </li>
+
+        <li>
+          <div className="view">
+            <input type="checkbox" className="toggle" id="toggle-view2" />
+            <label htmlFor="toggle-view2">1234567890</label>
+            <button type="button" className="destroy" />
+          </div>
+          <input type="text" className="edit" />
+        </li>
+      </ul>
+    </section>
+
+    <footer className="footer">
+      <span className="todo-count">
+        3 items left
+      </span>
+
+      <ul className="filters">
+        <li>
+          <a href="#/" className="selected">All</a>
+        </li>
+
+        <li>
+          <a href="#/active">Active</a>
+        </li>
+
+        <li>
+          <a href="#/completed">Completed</a>
+        </li>
+      </ul>
+
+      <button type="button" className="clear-completed">
+        Clear completed
+      </button>
+    </footer>
+  </section>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
